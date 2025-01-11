@@ -1,6 +1,6 @@
 # Tailscale SOCKS5 Proxy
 
-A Docker container that runs a SOCKS5 proxy through Tailscale, allowing you to route traffic through your Tailscale network.
+A Docker container that runs a SOCKS5 proxy through Tailscale, allowing you to set up end nodes to use specific IPs from your server (for testing with Playwright from multiple locations for example)
 
 ## Prerequisites
 
@@ -24,30 +24,7 @@ TAILSCALE_AUTH_KEY=your-auth-key-here
 
 ## Usage
 
-Configure your applications to use the SOCKS5 proxy:
-
-- Host: `localhost` (or your Docker host IP)
-- Port: `1080`
-- Protocol: SOCKS5
-- No authentication required
-
-### Browser Configuration
-
-**Firefox:**
-
-1. Settings → Network Settings
-2. Manual proxy configuration
-3. SOCKS Host: `localhost`
-4. Port: `1080`
-5. Select SOCKS v5
-6. Check "Proxy DNS when using SOCKS v5"
-
-**Chrome/Edge:**
-
-1. Settings → System → Network → Proxy settings
-2. Manual proxy setup
-3. SOCKS Host: `localhost`
-4. Port: `1080`
+Configure your [tailscale balancing SOCKS server](https://github.com/R3D347HR4Y/proxyserver)
 
 ## Components
 
@@ -60,7 +37,7 @@ Configure your applications to use the SOCKS5 proxy:
 
 - The SOCKS5 proxy is configured without authentication
 - Traffic is routed through your Tailscale network
-- Container exposes port 1080 for the SOCKS5 proxy
+- Container exposes port 1080 for testing
 
 ## Troubleshooting
 
