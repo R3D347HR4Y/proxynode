@@ -8,6 +8,12 @@ A Docker container that runs a SOCKS5 proxy through Tailscale, allowing you to s
 - A Tailscale account
 - A Tailscale auth key (can be generated in the Tailscale admin console)
 
+## Get the image
+
+```bash
+docker run -d --name bltv/ts-socks-node -e TAILSCALE_AUTH_KEY=$TAILSCALE_AUTH_KEY -p 1080:1080 bltv/ts-socks-node
+```
+
 ## Setup
 
 1. Create a `.env` file in the project root:

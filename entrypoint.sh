@@ -22,4 +22,4 @@ tailscale status
 echo "Starting Dante..."
 
 # Start the SOCKS5 proxy
-exec danted -f /etc/danted.conf
+danted -f /etc/danted.conf
